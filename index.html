@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lark講座 AIコーチ</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+h1 { text-align: center; color: #1a73e8; margin-bottom: 10px; font-size: 1.5em; }
+.subtitle { text-align: center; color: #666; margin-bottom: 20px; font-size: 0.9em; }
+.mode-select { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.mode-btn { padding: 10px 20px; border: 2px solid #1a73e8; border-radius: 8px; background: white; color: #1a73e8; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.mode-btn:hover, .mode-btn.active { background: #1a73e8; color: white; }
+.chat-box { background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; min-height: 400px; max-height: 70vh; overflow-y: auto; margin-bottom: 15px; }
+.msg { margin-bottom: 20px; }
+.msg.user { text-align: right; }
+.msg .bubble { display: inline-block; padding: 12px 18px; border-radius: 12px; max-width: 90%; text-align: left; line-height: 1.7; font-size: 14px; }
+.msg.user .bubble { background: #1a73e8; color: white; white-space: pre-wrap; }
+.msg.assistant .bubble { background: #f8f9fa; color: #333; border: 1px solid #e0e0e0; }
+.msg.assistant .bubble h1, .msg.assistant .bubble h2, .msg.assistant .bubble h3 { margin-top: 16px; margin-bottom: 8px; color: #1a73e8; }
+.msg.assistant .bubble h1 { font-size: 1.3em; }
+.msg.assistant .bubble h2 { font-size: 1.15em; }
+.msg.assistant .bubble h3 { font-size: 1.05em; }
+.msg.assistant .bubble ul, .msg.assistant .bubble ol { padding-left: 20px; margin: 8px 0; }
+.msg.assistant .bubble li { margin-bottom: 4px; }
+.msg.assistant .bubble a { color: #1a73e8; text-decoration: underline; }
+.msg.assistant .bubble table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+.msg.assistant .bubble th, .msg.assistant .bubble td { border: 1px solid #ddd; padding: 6px 10px; font-size: 13px; }
+.msg.assistant .bubble th { background: #f0f4ff; }
+.msg.assistant .bubble hr { margin: 16px 0; border: none; border-top: 1px solid #e0e0e0; }
+.msg.assistant .bubble code { background: #f0f0f0; padding: 1px 4px; border-radius: 3px; font-size: 13px; }
+.msg.assistant .bubble pre { background: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; margin: 8px 0; }
+.msg.assistant .bubble pre code { background: none; padding: 0; }
+.msg .label { font-size: 11px; color: #999; margin-bottom: 3px; }
+.input-area { display: flex; gap: 10px; }
+.input-area textarea { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; resize: vertical; min-height: 50px; font-family: inherit; }
+.input-area textarea:focus { border-color: #1a73e8; outline: none; }
+.input-area button { padding: 12px 24px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 600; white-space: nowrap; }
+.input-area button:hover { background: #1557b0; }
+.input-area button:disabled { background: #ccc; cursor: not-allowed; }
+.loading { color: #999; font-style: italic; }
+.export-btn { display: none; margin: 10px auto; padding: 8px 16px; background: #34a853; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.export-btn:hover { background: #2d8f47; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Lark講座 AIコーチ</h1>
+  <p class="subtitle">寺山大夢（Lark研究所）のナレッジを元にサポートします</p>
+  <div class="mode-select">
+    <button class="mode-btn active" onclick="setMode('qa', this)">質問する</button>
+    <button class="mode-btn" onclick="setMode('roadmap', this)">ロードマップ作成</button>
+    <button class="mode-btn" onclick="setMode('review', this)">提出物レビュー</button>
+  </div>
+  <div id="chat" class="chat-box"></div>
+  <button class="export-btn" id="exportBtn" onclick="exportMarkdown()">Markdownでダウンロード</button>
+  <div class="input-area">
+    <textarea id="input" placeholder="質問を入力してください..." onkeydown="handleKey(event)"></textarea>
+    <button id="sendBtn" onclick="send()">送信</button>
+  </div>
+</div>
+<script>
+marked.setOptions({ breaks: true, gfm: true });
+
+let mode = 'qa';
+// 会話履歴（Cloudflare Functions はステートレスのため、クライアントで管理）
+let conversationHistory = [];
+let lastResponse = '';
+
+const placeholders = {
+  qa: '質問を入力してください...',
+  roadmap: '上の質問に回答してください...',
+  review: '提出物の内容を貼り付けてください...'
+};
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    send();
+  }
+}
+
+function setMode(m, btn) {
+  mode = m;
+  conversationHistory = [];
+  lastResponse = '';
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('chat').innerHTML = '';
+  document.getElementById('exportBtn').style.display = 'none';
+  document.getElementById('input').placeholder = placeholders[m] || '';
+
+  if (m === 'roadmap') {
+    addMsg('assistant',
+      'ロードマップを作成します！以下をまとめて教えてください😊\n\n' +
+      '1. お名前\n' +
+      '2. 業種・業態\n' +
+      '3. 従業員数（何名でLarkを使うか）\n' +
+      '4. 現在使っているツール（Slack/Chatwork/LINE等）\n' +
+      '5. 一番解決したい課題（TOP3）\n' +
+      '6. Lark経験レベル（初めて / 少し触った / ある程度使える）\n' +
+      '7. 開始日（今日から？ or 特定の日？）\n' +
+      '8. ゴール日 or 目標期間'
+    );
+  }
+}
+
+function addMsg(role, text) {
+  const chat = document.getElementById('chat');
+  const label = role === 'user' ? 'あなた' : 'AIコーチ';
+  const content = role === 'assistant' ? marked.parse(text) : escHtml(text);
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  div.innerHTML = '<div class="label">' + label + '</div><div class="bubble">' + content + '</div>';
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  if (role === 'assistant') {
+    lastResponse = text;
+    if (mode === 'roadmap' && text.length > 500) {
+      document.getElementById('exportBtn').style.display = 'block';
+    }
+  }
+}
+
+function escHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function exportMarkdown() {
+  if (!lastResponse) return;
+  const blob = new Blob([lastResponse], { type: 'text/markdown' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'roadmap_' + new Date().toISOString().slice(0, 10) + '.md';
+  a.click();
+}
+
+async function send() {
+  const input = document.getElementById('input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  input.value = '';
+  addMsg('user', text);
+
+  const sendBtn = document.getElementById('sendBtn');
+  sendBtn.disabled = true;
+
+  const chat = document.getElementById('chat');
+  const loading = document.createElement('div');
+  loading.className = 'msg assistant loading';
+  loading.id = 'loading';
+  loading.innerHTML = '<div class="bubble">考え中...</div>';
+  chat.appendChild(loading);
+  chat.scrollTop = chat.scrollHeight;
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mode,
+        messages: conversationHistory,
+        message: text,
+      }),
+    });
+
+    const data = await res.json();
+    document.getElementById('loading')?.remove();
+
+    const assistantText = data.response || 'エラーが発生しました';
+    addMsg('assistant', assistantText);
+
+    // 会話履歴を更新
+    conversationHistory.push({ role: 'user', content: text });
+    conversationHistory.push({ role: 'assistant', content: assistantText });
+
+  } catch {
+    document.getElementById('loading')?.remove();
+    addMsg('assistant', '通信エラーが発生しました。再度お試しください。');
+  }
+
+  sendBtn.disabled = false;
+  input.focus();
+}
+</script>
+</body>
+</html>
