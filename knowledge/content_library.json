@@ -1,0 +1,607 @@
+{
+  "learning_paths": {
+    "M1_基本操作": {
+      "description": "チャット・カレンダー・ドキュメントを1人で使える",
+      "target_days": 7,
+      "steps": [
+        {
+          "day": 1,
+          "title": "Lark導入・初期設定",
+          "actions": [
+            "Larkアプリをダウンロード（PC + スマホ）",
+            "アカウント作成・プロフィール設定",
+            "ワークスペース作成 or 招待リンクで参加"
+          ],
+          "video": {
+            "title": "この動画1本でOK！Larkの導入方法完全解説",
+            "url": "https://www.youtube.com/watch?v=yJ5rNopFrt8",
+            "duration": "15:30"
+          },
+          "supplement": {
+            "title": "初心者必見！Larkを入れてまず最初にやるべきこと完全ガイド",
+            "url": "https://www.youtube.com/watch?v=RLuric6P_2s",
+            "duration": "27:48"
+          }
+        },
+        {
+          "day": 2,
+          "title": "チャット機能を使いこなす",
+          "actions": [
+            "テストグループチャットを作成",
+            "メンション（@）・返信・ピン留めを試す",
+            "ファイル添付・画像送信を試す",
+            "通知設定をカスタマイズ"
+          ],
+          "video": {
+            "title": "社内連絡はLark一択！チャット機能の最終形態完全解説",
+            "url": "https://www.youtube.com/watch?v=C-7ej6O1bZs",
+            "duration": "22:49"
+          }
+        },
+        {
+          "day": 3,
+          "title": "カレンダー・スケジュール管理",
+          "actions": [
+            "Larkカレンダーに今週の予定を入力",
+            "定例会議をカレンダーで作成（繰り返し設定）",
+            "リマインダーを設定",
+            "他メンバーとカレンダー共有"
+          ],
+          "video": {
+            "title": "Larkのカレンダー機能を徹底解説",
+            "url": "https://www.youtube.com/watch?v=bftVrIB-Az4",
+            "duration": "14:33"
+          }
+        },
+        {
+          "day": 4,
+          "title": "ドキュメント・Wiki入門",
+          "actions": [
+            "Larkドキュメントで議事録を1つ作成",
+            "共同編集機能を試す（自分+テストユーザー）",
+            "ボード・マインドノートを体験"
+          ],
+          "video": {
+            "title": "Docsで使えるボード・マインドノート完全解説",
+            "url": "https://www.youtube.com/watch?v=ZtME9SlZgAs",
+            "duration": "15:55"
+          }
+        },
+        {
+          "day": 5,
+          "title": "ビデオ会議を体験",
+          "actions": [
+            "テストのビデオ通話を開始",
+            "画面共有・録画機能を確認",
+            "議事録の自動作成機能を試す"
+          ],
+          "video": {
+            "title": "Larkで議事録をとる方法が便利すぎてやばい！",
+            "url": "https://www.youtube.com/watch?v=ztpmp-5p4Iw",
+            "duration": "14:25"
+          },
+          "supplement": {
+            "title": "Zoom、Google meetは時代遅れ！Larkビデオ会議を徹底解説",
+            "url": "https://www.youtube.com/watch?v=pF5nqAixUP4",
+            "duration": "29:21"
+          }
+        },
+        {
+          "day": 6,
+          "title": "タスク管理入門",
+          "actions": [
+            "タスクを5つ作成してみる",
+            "期限・担当者・優先度を設定",
+            "カンバンビューで確認"
+          ],
+          "video": {
+            "title": "Larkの使い方徹底解説 タスク管理やプロジェクト管理もこれで完結",
+            "url": "https://www.youtube.com/watch?v=_fBpJ9wUu-0",
+            "duration": "1:08:35"
+          }
+        },
+        {
+          "day": 7,
+          "title": "振り返り & 既存ツールとの比較",
+          "actions": [
+            "1週間で触った機能を振り返り",
+            "既存ツールと比較して便利だった点を3つ書き出す",
+            "来週のアクションプランを立てる"
+          ],
+          "video": {
+            "title": "社内管理はLark一択！Notion、Zoom、Slack、Excel、全てが1つになった最強ツール",
+            "url": "https://www.youtube.com/watch?v=BYIgSVlDVww",
+            "duration": "32:12"
+          }
+        }
+      ]
+    },
+    "M2_ツール移行": {
+      "description": "既存ツール→Larkチャットへの移行完了",
+      "target_days": 7,
+      "steps": [
+        {
+          "day": 8,
+          "title": "移行計画の策定",
+          "actions": [
+            "現在使っているツール一覧を書き出す",
+            "各ツールの代替Lark機能を特定",
+            "移行優先順位を決める（影響度×頻度）"
+          ],
+          "video": {
+            "title": "人気ITツールとLarkを比較した結果が衝撃だった",
+            "url": "https://www.youtube.com/watch?v=fWAozep1WpY",
+            "duration": "42:01"
+          }
+        },
+        {
+          "day": 9,
+          "title": "チャットツールの移行",
+          "actions": [
+            "業務用チャットグループをLarkに作成",
+            "メンバーを招待",
+            "旧チャットに「Larkに移行しました」と告知"
+          ],
+          "video": {
+            "title": "Larkチャットが便利すぎる！他のチャットツールと徹底比較",
+            "url": "https://www.youtube.com/watch?v=iK6kZIsStH4",
+            "duration": "23:57"
+          }
+        },
+        {
+          "day": 10,
+          "title": "スプレッドシート/Excelデータの移行",
+          "actions": [
+            "最も使用頻度の高いシートをCSVエクスポート",
+            "LarkのBaseにインポート",
+            "フィールド型（数値・日付・選択肢等）を設定"
+          ],
+          "video": {
+            "title": "スプレッドシート、ExcelからBaseに移行する方法を超わかりやすく解説！",
+            "url": "https://www.youtube.com/watch?v=kr2e0F63o7s",
+            "duration": "24:43"
+          }
+        },
+        {
+          "day": 11,
+          "title": "Googleフォームの移行",
+          "actions": [
+            "既存フォームの項目をLarkで再作成",
+            "回答の集計先をBaseに設定"
+          ],
+          "video": {
+            "title": "GoogleフォームをBaseに置き換える方法",
+            "url": "https://www.youtube.com/watch?v=EyZXEaJKLSE",
+            "duration": "18:43"
+          },
+          "supplement": {
+            "title": "Googleフォームより簡単なアンケート機能の使い方",
+            "url": "https://www.youtube.com/watch?v=167fZ9x3TYU",
+            "duration": "38:59"
+          }
+        },
+        {
+          "day": 12,
+          "title": "カレンダー・会議の移行",
+          "actions": [
+            "Googleカレンダーの予定をLarkカレンダーに移行",
+            "定例会議をLarkミーティングに切り替え",
+            "Zoom解約の検討"
+          ],
+          "video": {
+            "title": "Larkのカレンダー機能を徹底解説",
+            "url": "https://www.youtube.com/watch?v=bftVrIB-Az4",
+            "duration": "14:33"
+          }
+        },
+        {
+          "day": 13,
+          "title": "スタッフへの展開",
+          "actions": [
+            "スタッフ全員をLarkに招待",
+            "「なぜLarkに変えるか」を説明（チャットorミーティング）",
+            "初期設定マニュアルを共有"
+          ],
+          "video": {
+            "title": "Lark導入メリット10選！オールインワンツールで社内DXを成功させる方法",
+            "url": "https://www.youtube.com/watch?v=cQAejfQCElA",
+            "duration": "28:05"
+          }
+        },
+        {
+          "day": 14,
+          "title": "移行チェック & 旧ツール停止判断",
+          "actions": [
+            "全メンバーがLarkでやり取りできているか確認",
+            "旧ツールの使用状況を確認",
+            "問題がなければ旧ツールの利用停止スケジュール策定"
+          ],
+          "video": {
+            "title": "業務効率化に最も繋がるITツールはどれか徹底比較",
+            "url": "https://www.youtube.com/watch?v=piqup5Dv5cg",
+            "duration": "22:34"
+          }
+        }
+      ]
+    },
+    "M3_データ管理構築": {
+      "description": "売上 or タスク管理のBase構築完了",
+      "target_days": 14,
+      "steps": [
+        {
+          "day": 15,
+          "title": "Base入門 - 基本概念を理解",
+          "actions": [
+            "Base（DB）の概念を動画で学ぶ",
+            "テスト用のBaseテーブルを作成",
+            "フィールド型（テキスト/数値/日付/選択/リンク）を一通り試す"
+          ],
+          "video": {
+            "title": "Excel・スプレッドシートを超えた、LarkのBase機能完全解説",
+            "url": "https://www.youtube.com/watch?v=pTgSX0YDnmc",
+            "duration": "12:59"
+          }
+        },
+        {
+          "day": 16,
+          "title": "Base深掘り - 高度な機能",
+          "actions": [
+            "ビュー機能（グリッド/カンバン/ガント/カレンダー）を試す",
+            "フィルター・ソート・グルーピングを設定",
+            "フォーミュラ（計算フィールド）を使う"
+          ],
+          "video": {
+            "title": "Base完全解説！スプレッドシートより最強な理由と実務活用術",
+            "url": "https://www.youtube.com/watch?v=uDDMEb2DcFs",
+            "duration": "1:06:55"
+          }
+        },
+        {
+          "day": 17,
+          "title": "Baseのビュー活用",
+          "actions": [
+            "目的別ビューを3つ以上作成",
+            "権限設定（閲覧のみ/編集可）を設定"
+          ],
+          "video": {
+            "title": "管理シートがさらに見やすくなるBaseのビューの使い方",
+            "url": "https://www.youtube.com/watch?v=q6_tQd6QR28",
+            "duration": "16:57"
+          },
+          "supplement": {
+            "title": "Baseの高度な権限機能の使い方を徹底解説",
+            "url": "https://www.youtube.com/watch?v=sOUaA20bAIY",
+            "duration": "31:19"
+          }
+        },
+        {
+          "day": 18,
+          "title": "売上管理シートの構築①",
+          "actions": [
+            "売上管理用Baseテーブルを作成",
+            "フィールド設計：顧客名/金額/日付/ステータス/担当者",
+            "サンプルデータを10件入力"
+          ],
+          "video": {
+            "title": "脱・Excel！売上管理を超スムーズに行う最新アプリの使い方を解説",
+            "url": "https://www.youtube.com/watch?v=54hlw4elOns",
+            "duration": "35:47"
+          }
+        },
+        {
+          "day": 19,
+          "title": "売上管理シートの構築②",
+          "actions": [
+            "月別/担当別の集計ビューを作成",
+            "ダッシュボードでグラフ化",
+            "目標値との比較表示"
+          ],
+          "video": {
+            "title": "成約率が急増する営業管理シートの作り方",
+            "url": "https://www.youtube.com/watch?v=0JOSm4m58gI",
+            "duration": "35:40"
+          }
+        },
+        {
+          "day": 20,
+          "title": "顧客管理シートの構築",
+          "actions": [
+            "顧客管理用Baseテーブルを作成",
+            "ステータス管理（見込→商談中→成約→フォロー）を設計",
+            "売上テーブルとリンク"
+          ],
+          "video": {
+            "title": "Baseを使った顧客管理シートの作り方完全解説",
+            "url": "https://www.youtube.com/watch?v=0yviqWRAU8c",
+            "duration": "28:41"
+          }
+        },
+        {
+          "day": 21,
+          "title": "ダッシュボードの構築",
+          "actions": [
+            "経営ダッシュボードを作成",
+            "売上推移グラフ・顧客数推移・目標達成率を配置",
+            "スマホからの見え方を確認"
+          ],
+          "video": {
+            "title": "Larkダッシュボードの使い方徹底解説",
+            "url": "https://www.youtube.com/watch?v=NImhfO7o6U8",
+            "duration": "21:18"
+          }
+        },
+        {
+          "day": 22,
+          "title": "タスク管理システムの構築",
+          "actions": [
+            "業務タスクをすべてLarkタスクに移行",
+            "プロジェクト別にグルーピング",
+            "カンバンビューで運用開始"
+          ],
+          "video": {
+            "title": "従業員売上が30%上がったLarkのタスク管理システム完全解説",
+            "url": "https://www.youtube.com/watch?v=sRUIkcYL2iU",
+            "duration": "21:25"
+          }
+        },
+        {
+          "day": 23,
+          "title": "スケジュール管理の統合",
+          "actions": [
+            "Baseでスケジュール管理テーブルを作成",
+            "カレンダービューで表示",
+            "タスクとスケジュールを連動"
+          ],
+          "video": {
+            "title": "Baseを使ったスケジュール管理シートの作り方を徹底解説！",
+            "url": "https://www.youtube.com/watch?v=eQ8gTC-Uj_I",
+            "duration": "17:26"
+          }
+        },
+        {
+          "day": 24,
+          "title": "アプリ機能でUI改善",
+          "actions": [
+            "Baseの「アプリ」機能で入力フォームを作成",
+            "スタッフが使いやすいUIに調整",
+            "スマホからの入力を確認"
+          ],
+          "video": {
+            "title": "誰でも簡単に業務システムが作れる！Lark Base「アプリ」機能を徹底解説",
+            "url": "https://www.youtube.com/watch?v=T1XZ57XiSSY",
+            "duration": "25:18"
+          }
+        },
+        {
+          "day": 25,
+          "title": "Base応用テクニック",
+          "actions": [
+            "複数テーブル間のリレーション設定",
+            "ルックアップ・ロールアップで自動集計",
+            "条件付き書式で視覚化"
+          ],
+          "video": {
+            "title": "Base機能をもっと使いこなしてLarkの力を最大限に引きだそう！",
+            "url": "https://www.youtube.com/watch?v=BMEvyJ4BQls",
+            "duration": "25:16"
+          }
+        },
+        {
+          "day": 26,
+          "title": "経営の見える化 - 統合",
+          "actions": [
+            "全データを統合したダッシュボードを完成",
+            "売上・顧客・タスクを1画面で確認できる状態に",
+            "チームメンバーに共有"
+          ],
+          "video": {
+            "title": "自動で経営の数字を全て見える化する方法",
+            "url": "https://www.youtube.com/watch?v=gLOHReQYPhI",
+            "duration": "37:24"
+          }
+        },
+        {
+          "day": 27,
+          "title": "営業管理の仕組み化",
+          "actions": [
+            "営業パイプラインをBaseで構築",
+            "商談→見積→成約のフロー管理",
+            "営業日報テンプレート作成"
+          ],
+          "video": {
+            "title": "スプレッドシート卒業！営業管理が10倍楽になるLarkの衝撃機能",
+            "url": "https://www.youtube.com/watch?v=3rBLSJY0WL4",
+            "duration": "43:16"
+          }
+        },
+        {
+          "day": 28,
+          "title": "M3完了チェック & 振り返り",
+          "actions": [
+            "構築したBase・ダッシュボードの最終確認",
+            "スタッフにデモ・使い方説明",
+            "改善点のリストアップ",
+            "次のフェーズ（自動化）への準備"
+          ],
+          "video": {
+            "title": "Lark導入メリットランキングTOP10",
+            "url": "https://www.youtube.com/watch?v=j9R3sJHsVHw",
+            "duration": "28:03"
+          }
+        }
+      ]
+    },
+    "M4_自動化_運用定着": {
+      "description": "自動化ワークフローが動き、毎日Larkで業務が回る",
+      "target_days": 14,
+      "steps": [
+        {
+          "day": 29,
+          "title": "自動化の基本を理解",
+          "actions": [
+            "Larkの自動化機能（オートメーション）の概念を学ぶ",
+            "トリガー・条件・アクションの仕組みを理解",
+            "テスト用の簡単な自動化を1つ作成"
+          ],
+          "video": {
+            "title": "Larkの自動化機能であなたの\"ムダな時間\"をゼロにする方法",
+            "url": "https://www.youtube.com/watch?v=-diZUj3lZjg",
+            "duration": "36:40"
+          }
+        },
+        {
+          "day": 30,
+          "title": "自動化の実践①",
+          "actions": [
+            "日報提出のリマインド自動化",
+            "新規データ入力時の通知自動化",
+            "期限切れタスクのアラート設定"
+          ],
+          "video": {
+            "title": "Excel関数卒業！Larkで誰でも自動化機能が作れる時代へ",
+            "url": "https://www.youtube.com/watch?v=BlvCsDIlTq4",
+            "duration": "30:59"
+          }
+        },
+        {
+          "day": 31,
+          "title": "自動化の実践②",
+          "actions": [
+            "更新通知の自動化設定",
+            "ステータス変更時の自動処理",
+            "週次レポートの自動生成"
+          ],
+          "video": {
+            "title": "更新通知が自動でいく管理シートの作り方",
+            "url": "https://www.youtube.com/watch?v=3DSywFSbz80",
+            "duration": "16:22"
+          }
+        },
+        {
+          "day": 32,
+          "title": "勤怠管理システム構築",
+          "actions": [
+            "勤怠管理用Baseを構築",
+            "出退勤の記録フォームを作成",
+            "月次の勤務時間自動集計を設定"
+          ],
+          "video": {
+            "title": "脱・Excel！誰でも簡単にできる勤怠管理システムの作り方を解説",
+            "url": "https://www.youtube.com/watch?v=M_OBZuNvE-o",
+            "duration": "27:29"
+          },
+          "supplement": {
+            "title": "最新版の勤怠管理システムの使い方を解説",
+            "url": "https://www.youtube.com/watch?v=SOYqGHDOzjk",
+            "duration": "17:48"
+          }
+        },
+        {
+          "day": 33,
+          "title": "日報システム構築",
+          "actions": [
+            "日報テンプレートをBaseで作成",
+            "毎日17時にリマインド自動送信設定",
+            "管理者への集計レポート自動化"
+          ],
+          "video": {
+            "title": "日報を自動で管理する最強のツールを紹介します",
+            "url": "https://www.youtube.com/watch?v=r1r1zXz_hfc",
+            "duration": "28:34"
+          },
+          "supplement": {
+            "title": "従業員の生産性が上昇した、Larkの日報システムが便利すぎる！",
+            "url": "https://www.youtube.com/watch?v=X18c6uAn6bk",
+            "duration": "18:57"
+          }
+        },
+        {
+          "day": 34,
+          "title": "経費精算の仕組み化",
+          "actions": [
+            "経費申請フォームを作成",
+            "承認ワークフローを設定",
+            "月次の経費集計自動化"
+          ],
+          "video": {
+            "title": "超簡単！スムーズに経費精算が終わる仕組みを作りました！",
+            "url": "https://www.youtube.com/watch?v=LSuk684Z56M",
+            "duration": "32:47"
+          }
+        },
+        {
+          "day": 35,
+          "title": "チャットグループの一括管理",
+          "actions": [
+            "プロジェクト別チャットグループを整理",
+            "自動追加の仕組みを設定"
+          ],
+          "video": {
+            "title": "自動で複数のチャットグループに一括で追加する裏技",
+            "url": "https://www.youtube.com/watch?v=-Ts4zNcfa3k",
+            "duration": "15:15"
+          }
+        },
+        {
+          "day": "36-42",
+          "title": "運用定着期間（1週間）",
+          "actions": [
+            "毎朝Larkでチェックイン習慣を確立",
+            "全業務をLark内で完結させる",
+            "つまずきポイントを記録→改善",
+            "スタッフからのフィードバック収集",
+            "不要な旧ツールを順次停止"
+          ],
+          "video": {
+            "title": "Larkを導入するメリットランキングTOP10",
+            "url": "https://www.youtube.com/watch?v=j9R3sJHsVHw",
+            "duration": "28:03"
+          }
+        }
+      ]
+    },
+    "industry_specific": {
+      "コンテンツ販売": {
+        "videos": [
+          {
+            "title": "コンテンツ販売：受講生管理を最適化する方法を解説します",
+            "url": "https://www.youtube.com/watch?v=HcCHvdhY4CM",
+            "duration": "40:43"
+          },
+          {
+            "title": "コンテンツ販売者向けLarkの活用方法",
+            "url": "https://www.youtube.com/watch?v=XWkhhI0C1LI",
+            "duration": "17:35"
+          }
+        ]
+      },
+      "クライアントワーク": {
+        "videos": [
+          {
+            "title": "クライアントワーカー向けLarkの活用方法完全解説",
+            "url": "https://www.youtube.com/watch?v=IFm5QK-_2ns",
+            "duration": "21:50"
+          }
+        ]
+      },
+      "店舗ビジネス": {
+        "videos": [
+          {
+            "title": "店舗経営者が取り入れて良かったデジタルツールを徹底解説",
+            "url": "https://www.youtube.com/watch?v=MXy9zceCFPo",
+            "duration": "16:47"
+          }
+        ]
+      },
+      "企業DX": {
+        "videos": [
+          {
+            "title": "企業のITツール費用を大幅に削減する方法",
+            "url": "https://www.youtube.com/watch?v=ZbuYj6cERqM",
+            "duration": "18:36"
+          }
+        ]
+      }
+    }
+  }
+}
